@@ -4,8 +4,11 @@ import App from './components/App';
 // import { setTimeout } from 'timers';
 
 import data from './testData';
-console.log(data);
-ReactDOM.render(<App />, document.getElementById('app'));
+
+ReactDOM.render(
+  <App contests={data.contests} />,
+  document.getElementById('app')
+);
 // setTimeout(() => {
 //   ReactDOM.render(<h3>Hello World</h3>, document.getElementById('app'));
 // }, 3000);

@@ -1,6 +1,8 @@
 import express from 'express';
 import config from './config';
 import apiRouter from './api';
+import sassMiddleware from 'node-sass-middleware';
+import path from 'path';
 
 const server = express();
 
@@ -10,9 +12,18 @@ server.set('view engine', 'ejs');
 // THIS SETS UP THE THE HOMEPAGE
 server.get('/', (req, res) => {
   res.render('index', {
-    content: 'I am from EJS'
+    content: 'React Not Working'
   });
 });
+
+// SETTING UP SASS middleware
+
+server.use(
+  sassMiddleware({
+    src: path.join(__dirname, 'sass'),
+    dest: path.join(__dirname, 'public')
+  })
+);
 
 // THIS CREATES A HOMEPAGE
 server.use('/api', apiRouter);

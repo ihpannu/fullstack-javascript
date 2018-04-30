@@ -1,4 +1,5 @@
 import React from 'react';
+
 export const Header = ({ message }) => {
   return (
     <div className="text-center">

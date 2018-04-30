@@ -1,0 +1,16 @@
+.ContestPreview {
+  margin: 1rem;
+  border: 1px solid #ccc;
+  .category-name {
+    border-bottom: 1px solid #ccc;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    background: #eee;
+  }
+  .contest-name {
+    padding: 0.5rem;
+  }
+}
+li {
+  list-style-type: none;
+}
