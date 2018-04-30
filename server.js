@@ -5,6 +5,14 @@ import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
 
 const server = express();
+// SETTING UP SASS middleware
+
+server.use(
+  sassMiddleware({
+    src: path.join(__dirname, 'sass'),
+    dest: path.join(__dirname, 'public')
+  })
+);
 
 // SETTING UP VIEWENGINE
 server.set('view engine', 'ejs');
@@ -15,15 +23,6 @@ server.get('/', (req, res) => {
     content: 'React Not Working'
   });
 });
-
-// SETTING UP SASS middleware
-
-server.use(
-  sassMiddleware({
-    src: path.join(__dirname, 'sass'),
-    dest: path.join(__dirname, 'public')
-  })
-);
 
 // THIS CREATES A HOMEPAGE
 server.use('/api', apiRouter);
