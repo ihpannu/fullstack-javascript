@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 // import { setTimeout } from 'timers';
 
+import data from './testData';
+console.log(data);
 ReactDOM.render(<App />, document.getElementById('app'));
 // setTimeout(() => {
 //   ReactDOM.render(<h3>Hello World</h3>, document.getElementById('app'));
